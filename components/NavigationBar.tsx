@@ -4,7 +4,6 @@ import { ReactNode, useEffect, useState } from 'react';
 import {
   IconBox,
   IconChat,
-  IconCheck,
   IconFriend,
   IconHelp,
   IconLeftArrow,

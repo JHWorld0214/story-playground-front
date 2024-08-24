@@ -1,10 +1,8 @@
 import AutoTypingContent from '@/components/AutoTypingContent';
 import ProgressBar from '@/components/ProgressBar';
-import BookBackground from '@/public/images/book-background.svg';
 import Image from 'next/image';
 import { useState } from 'react';
 import SideNavigationBar from '@/components/NavigationBar';
-import ExImg from '@/public/images/example.svg';
 import SendMsg from '@/public/icons/send.svg';
 import { IconBookBackground, IconCheck, IconExImg } from '@/public/icons';
 

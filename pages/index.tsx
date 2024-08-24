@@ -1,6 +1,4 @@
-import Underline from '@/public/icons/underline.svg';
 import Image from 'next/image';
-import Google from '@/public/icons/google.svg';
 import Logo from '@/public/images/logo.png';
 import Link from 'next/link';
 import { useCookies } from 'react-cookie';
