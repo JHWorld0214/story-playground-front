@@ -49,7 +49,12 @@ function Landing() {
           <Link className="h-[48px] flex items-center" href={GOOGLE_SOCIAL_LOGIN_URL}>
             Log In
           </Link>
-          <button className="border-[2px] border-[#0F172A] rounded-[8px] px-[29px] py-[10px]">Sign Up Now</button>
+          <Link
+            className="border-[2px] border-[#0F172A] rounded-[8px] px-[29px] py-[10px]"
+            href={GOOGLE_SOCIAL_LOGIN_URL}
+          >
+            Sign Up Now
+          </Link>
         </div>
       </section>
       {/* 중간 메인 텍스트 부분 */}
