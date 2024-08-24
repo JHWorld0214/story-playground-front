@@ -60,13 +60,13 @@ function Landing() {
       {/* 중간 메인 텍스트 부분 */}
       <section className="text-center relative whitespace-nowrap mt-[120px] flex flex-col gap-[50px]">
         <div className="font-semibold text-[70px] ">
-          생성형 AI 어시스턴트 ‘야기'와 함께
+          생성형 AI 어시스턴트 &apos;야기&apos;와 함께
           <p />
           만드는 나만의 이야기
           <IconUnderline width={121} height={15} className="absolute top-[90px] right-[215px]"></IconUnderline>
         </div>
         <h5 className="text-[28px] font-400">
-          '야기' 의 도움을 받아 자유롭게 상상력을 펼치고,
+          &apos;야기&apos; 의 도움을 받아 자유롭게 상상력을 펼치고,
           <p />
           동화의 주인공이 되어보세요!
         </h5>
