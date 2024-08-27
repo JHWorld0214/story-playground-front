@@ -1,10 +1,11 @@
 import SideNavigationBar from '@/components/NavigationBar';
-import { IconArrowDown, IconNextTriangle, IconSearch } from '@/public/icons';
+import { IconArrowDown, IconNext, IconNextTriangle, IconPrev, IconSearch } from '@/public/icons';
 import Logo from '@/public/images/small-logo.png';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import BookList from '@/components/BookList';
 import SearchBar from '@/components/SearchBar';
+import { useState } from 'react';
 
 // 더미 데이터
 const writingBooks = [
@@ -43,6 +44,18 @@ const writingBooks = [
     title: 'The Design of Everyday Things',
     writer: 'Don Norman',
     date: '2024-08-24',
+  },
+  {
+    coverImg: '/path/to/cover3.png',
+    title: 'Sprint: How to solve big problems...',
+    writer: 'Jake Knapp',
+    date: '2024-08-25',
+  },
+  {
+    coverImg: '/path/to/cover3.png',
+    title: 'Sprint: How to solve big problems...',
+    writer: 'Jake Knapp',
+    date: '2024-08-25',
   },
   {
     coverImg: '/path/to/cover3.png',
@@ -100,6 +113,34 @@ const doneBooks = [
 
 function Home() {
   const router = useRouter();
+  const [ingCurrPage, setIngCurrPage] = useState(0);
+  const [doneCurrPage, setDoneCurrPage] = useState(0);
+
+  const visible = 4;
+
+  const handleNext = (category: string)=>{
+    if(category === 'ing'){
+      if((ingCurrPage+1)*visible < writingBooks.length){
+        setIngCurrPage(ingCurrPage+1);
+      }
+    }else if(category === 'done'){
+      if((doneCurrPage + 1)*visible < doneBooks.length){
+        setDoneCurrPage(doneCurrPage+1);
+      }
+    }
+  };
+
+  const handlePrev = (category: string) => {
+    if (category === 'ing') {
+      if (ingCurrPage > 0) {
+        setIngCurrPage(ingCurrPage - 1);
+      }
+    } else if (category === 'done') {
+      if (doneCurrPage > 0) {
+        setDoneCurrPage(doneCurrPage - 1);
+      }
+    }
+  };
 
   return (
     <div className="w-full h-[100vh] flex flex-col items-center justify-center pl-[280px]">
@@ -129,13 +170,47 @@ function Home() {
         </div>
 
         {/*만들던 이야기 리스트*/}
-        <div className="w-4/5 p-4 pb-12">
-          <BookList title="만들던 이야기" contents={writingBooks} />
+        <div className="w-5/6 pb-12">
+          <h2 className="text-[20px] font-bold text-gray-400 mb-6">만들던 이야기</h2>
+          <div className="flex flex-row items-center">
+            {ingCurrPage > 0 && (
+              <IconPrev
+                alt="prev icon"
+                className="cursor-pointer"
+                onClick={() => handlePrev('ing')}
+              />
+            )}
+            <BookList visible={visible} currPage={ingCurrPage} contents={writingBooks} />
+            {(ingCurrPage + 1) * visible < writingBooks.length && (
+              <IconNext
+                alt="next icon"
+                className="cursor-pointer"
+                onClick={() => handleNext('ing')}
+              />
+            )}
+          </div>
         </div>
 
-        {/*완성된 이야기 리스트*/}
-        <div className="w-4/5 p-4 pb-12">
-          <BookList title="완성한 이야기" contents={doneBooks} />
+        {/*완성한 이야기 리스트*/}
+        <div className="w-5/6 pb-12">
+          <h2 className="text-[20px] font-bold text-gray-400 mb-6">완성한 이야기</h2>
+          <div className="flex flex-row items-center">
+            {doneCurrPage > 0 && (
+              <IconPrev
+                alt="prev icon"
+                className="cursor-pointer"
+                onClick={() => handlePrev('done')}
+              />
+            )}
+            <BookList visible={visible} currPage={doneCurrPage} contents={doneBooks} />
+            {(doneCurrPage + 1) * visible < doneBooks.length && (
+              <IconNext
+                alt="next icon"
+                className="cursor-pointer"
+                onClick={() => handleNext('done')}
+              />
+            )}
+          </div>
         </div>
 
       </div>
