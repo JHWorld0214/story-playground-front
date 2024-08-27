@@ -12,6 +12,8 @@ import IconSetting from './setting.svg';
 import IconChat from './chat.svg';
 import IconBookBackground from './book-background.svg';
 import IconExImg from './example.svg';
+import IconArrowDown from './arrow-down.svg';
+import IconSearch from './search.svg';
 
 export {
   IconCheck,
@@ -28,4 +30,6 @@ export {
   IconChat,
   IconBookBackground,
   IconExImg,
+  IconArrowDown,
+  IconSearch,
 };

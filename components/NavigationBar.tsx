@@ -19,18 +19,18 @@ const SideNavigationBar = () => {
     name: 'JHOON KIM',
   });
 
-  useEffect(() => {
-    const getUserInfo = async () => {
-      const userInfoRes = await instance.get('/api/user/info');
-      console.log(userInfoRes.data.data);
-
-      if (userInfoRes.status === 200) {
-        // setUserInfo(userInfoRes.data.data);
-      }
-    };
-
-    getUserInfo();
-  }, []);
+  // useEffect(() => {
+  //   const getUserInfo = async () => {
+  //     const userInfoRes = await instance.get('/api/user/info');
+  //     console.log(userInfoRes.data.data);
+  //
+  //     if (userInfoRes.status === 200) {
+  //       // setUserInfo(userInfoRes.data.data);
+  //     }
+  //   };
+  //
+  //   getUserInfo();
+  // }, []);
 
   return (
     <div className="fixed left-0 top-0 shadow h-full w-[280px] bg-white z-10">
