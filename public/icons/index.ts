@@ -14,6 +14,9 @@ import IconBookBackground from './book-background.svg';
 import IconExImg from './example.svg';
 import IconArrowDown from './arrow-down.svg';
 import IconSearch from './search.svg';
+import IconNextTriangle from './next-triangle.svg';
+import IconNext from './next.svg';
+import IconPrev from './prev.svg';
 
 export {
   IconCheck,
@@ -32,4 +35,7 @@ export {
   IconExImg,
   IconArrowDown,
   IconSearch,
+  IconNextTriangle,
+  IconNext,
+  IconPrev,
 };
