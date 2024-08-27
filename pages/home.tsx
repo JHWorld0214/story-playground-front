@@ -4,6 +4,7 @@ import Logo from '@/public/images/small-logo.png';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import BookList from '@/components/BookList';
+import SearchBar from '@/components/SearchBar';
 
 // 더미 데이터
 const writingBooks = [
@@ -103,39 +104,10 @@ function Home() {
   return (
     <div className="w-full h-[100vh] flex flex-col items-center justify-center pl-[280px]">
       <SideNavigationBar></SideNavigationBar>
+
       <div className="w-5/6 h-[100vh] flex flex-col pt-12 items-center justify-start">
         {/*검색창*/}
-        <div
-          className="w-4/5 h-[60px] flex flex-row items-center gap-3 border-2 border-gray-200 rounded-3xl drop-shadow-sm">
-          <div className="flex flex-row items-center justify-evenly w-[125px] h-full bg-gray-100 rounded-l-3xl">
-            <div className="text-xl pt-2 pb-2 pl-5">
-              All
-            </div>
-            <IconArrowDown
-              alt="arrow down icon"
-              width={20}
-              height={11}
-              className="top-10 cursor-pointer"
-              onClick={() => {
-                alert('검색 더보기 클릭!');
-              }}
-            ></IconArrowDown>
-          </div>
-          <div className="flex flex-row items-center justify-between pl-2 pr-2">
-            <input type="text" placeholder="Search"
-                   className="text text-xl h-full w-[470px] outline-0 no-underline placeholder-gray-300">
-            </input>
-            <IconSearch
-              alt="search icon"
-              width={20}
-              height={20}
-              className="fixed right-5 cursor-pointer"
-              onClick={() => {
-                alert('검색 돋보기 클릭!');
-              }}
-            ></IconSearch>
-          </div>
-        </div>
+        <SearchBar />
 
         {/*이야기 만들기 베너*/}
         <div className="flex flex-row w-full h-[300px] items-center justify-evenly bg-[#CDCDCD]/10 mt-16 mb-16 pt-8 pb-8">
