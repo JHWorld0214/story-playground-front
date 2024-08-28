@@ -4,7 +4,7 @@ const SearchBar = ()=>{
   return (
     <div
       className="w-4/5 h-[60px] flex flex-row items-center gap-3 border-2 border-gray-200 rounded-3xl drop-shadow-sm">
-      <div className="flex flex-row items-center justify-evenly w-[125px] h-full bg-gray-100 rounded-l-3xl">
+      <div className="flex flex-row items-center justify-evenly w-[125px]  bg-gray-100 rounded-l-3xl">
         <div className="text-xl pt-2 pb-2 pl-5">
           All
         </div>

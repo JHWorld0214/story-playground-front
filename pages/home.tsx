@@ -6,110 +6,7 @@ import { useRouter } from 'next/router';
 import BookList from '@/components/BookList';
 import SearchBar from '@/components/SearchBar';
 import { useState } from 'react';
-
-// 더미 데이터
-const writingBooks = [
-  {
-    coverImg: '/path/to/cover1.png',
-    title: 'Don\'t Make Me Think',
-    writer: 'Steve Krug',
-    date: '2024-08-16',
-  },
-  {
-    coverImg: '/path/to/cover2.png',
-    title: 'The Design of Everyday Things',
-    writer: 'Don Norman',
-    date: '2024-08-20',
-  },
-  {
-    coverImg: '/path/to/cover3.png',
-    title: 'Sprint: How to solve big problems...',
-    writer: 'Jake Knapp',
-    date: '2024-08-22',
-  },
-  {
-    coverImg: '/path/to/cover4.png',
-    title: 'Lean UX: Design Great Products',
-    writer: 'Jeff Gothelf',
-    date: '2024-08-23',
-  },
-  {
-    coverImg: '/path/to/cover1.png',
-    title: 'Don\'t Make Me Think',
-    writer: 'Steve Krug',
-    date: '2024-08-23',
-  },
-  {
-    coverImg: '/path/to/cover2.png',
-    title: 'The Design of Everyday Things',
-    writer: 'Don Norman',
-    date: '2024-08-24',
-  },
-  {
-    coverImg: '/path/to/cover3.png',
-    title: 'Sprint: How to solve big problems...',
-    writer: 'Jake Knapp',
-    date: '2024-08-25',
-  },
-  {
-    coverImg: '/path/to/cover3.png',
-    title: 'Sprint: How to solve big problems...',
-    writer: 'Jake Knapp',
-    date: '2024-08-25',
-  },
-  {
-    coverImg: '/path/to/cover3.png',
-    title: 'Sprint: How to solve big problems...',
-    writer: 'Jake Knapp',
-    date: '2024-08-25',
-  },
-];
-
-const doneBooks = [
-  {
-    coverImg: '/path/to/cover1.png',
-    title: 'Don\'t Make Me Think',
-    writer: 'Steve Krug',
-    date: '2000',
-  },
-  {
-    coverImg: '/path/to/cover2.png',
-    title: 'The Design of Everyday Things',
-    writer: 'Don Norman',
-    date: '1988',
-  },
-  {
-    coverImg: '/path/to/cover3.png',
-    title: 'Sprint: How to solve big problems...',
-    writer: 'Jake Knapp',
-    date: '2000',
-  },
-  {
-    coverImg: '/path/to/cover4.png',
-    title: 'Lean UX: Design Great Products',
-    writer: 'Jeff Gothelf',
-    date: '2016',
-  },
-  {
-    coverImg: '/path/to/cover1.png',
-    title: 'Don\'t Make Me Think',
-    writer: 'Steve Krug',
-    date: '2000',
-  },
-  {
-    coverImg: '/path/to/cover2.png',
-    title: 'The Design of Everyday Things',
-    writer: 'Don Norman',
-    date: '1988',
-  },
-  {
-    coverImg: '/path/to/cover3.png',
-    title: 'Sprint: How to solve big problems...',
-    writer: 'Jake Knapp',
-    date: '2000',
-  },
-];
-
+import { doneBooks, writingBooks } from '@/components/dummyBookList';
 
 function Home() {
   const router = useRouter();
@@ -143,9 +40,8 @@ function Home() {
   };
 
   return (
-    <div className="w-full h-[100vh] flex flex-col items-center justify-center pl-[280px]">
-      <SideNavigationBar></SideNavigationBar>
-
+    <main className="w-full h-[100vh] flex flex-col items-center justify-center pl-[280px]">
+      <SideNavigationBar />
       <div className="w-5/6 h-[100vh] flex flex-col pt-12 items-center justify-start">
         {/*검색창*/}
         <SearchBar />
@@ -214,7 +110,7 @@ function Home() {
         </div>
 
       </div>
-    </div>
+    </main>
   );
 }
 

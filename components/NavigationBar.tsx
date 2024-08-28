@@ -85,10 +85,24 @@ const NavStackContent = () => {
           >
             <IconBox stroke={currPage === '홈' ? '#7F57F1' : '#000000'} />
           </NavCell>
-          <NavCell name="만들던 이야기">
+          <NavCell
+            name="만들던 이야기"
+            onClick={() => {
+              setCurrPage('만들던 이야기');
+              router.push('/ingStory');
+            }}
+            selected={currPage === '만들던 이야기'}
+          >
             <IconBox stroke={'#000000'} />
           </NavCell>
-          <NavCell name="완성한 이야기">
+          <NavCell
+            name="완성한 이야기"
+            onClick={() => {
+              setCurrPage('완성한 이야기');
+              router.push('/doneStory');
+            }}
+            selected={currPage === '완성한 이야기'}
+          >
             <IconBox stroke={'#000000'} />
           </NavCell>
           <NavCell
