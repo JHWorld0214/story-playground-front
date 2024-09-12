@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface SortingToggleProps {
   selected: string;
   onToggle: (selected: string) => void;

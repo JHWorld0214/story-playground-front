@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2282bee4-92aa-4b11-a929-61d1077ffc85" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/SortingToggle.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/dummyBookList.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/doneStory.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/ingStory.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/NavigationBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/NavigationBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SearchBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/BookList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/BookList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SortingToggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SortingToggle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/dummyBookList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constant/dummyBookList.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/doneStory.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/doneStory.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ingStory.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ingStory.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,10 +29,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2lBiaEtYhMvA8Lo9t5wK1vzyOi9" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -48,12 +47,13 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\user\\Desktop\\story-playground-front\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "/Users/sumin/dev/projects/story-playground-front/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/constant" />
       <recent name="C:\Users\user\Desktop\story-playground-front\public\icons" />
       <recent name="C:\Users\user\Desktop\story-playground-front\public\images" />
     </key>

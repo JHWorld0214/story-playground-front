@@ -1,14 +1,14 @@
 import SideNavigationBar from '@/components/NavigationBar';
 import SearchBar from '@/components/SearchBar';
 import { useState } from 'react';
-import { writingBooks } from '@/components/dummyBookList';
+import { writingBooks } from '@/constant/dummyBookList';
 import BookList from '@/components/BookList';
 import { IconNext, IconPrev } from '@/public/icons';
 import SortingToggle from '@/components/SortingToggle';
 
 const IngStory = () => {
   const [currPage, setCurrPage] = useState(0);
-  const [selected, setSelected] = useState('recent');
+  const [selectedSortType, setselectedSortType] = useState('recent');
 
   const visible = 8;
 
@@ -25,7 +25,7 @@ const IngStory = () => {
   };
 
   const handleToggle = (selection: string) => {
-    setSelected(selection);
+    setselectedSortType(selection);
   };
 
   return (
@@ -37,7 +37,7 @@ const IngStory = () => {
 
         {/*정렬 토글 버튼*/}
         <div className="w-full flex flex-row items-center justify-end px-[140px]">
-          <SortingToggle selected={selected} onToggle={handleToggle} />
+          <SortingToggle selected={selectedSortType} onToggle={handleToggle} />
         </div>
 
         {/*책리스트*/}
@@ -51,7 +51,7 @@ const IngStory = () => {
           )}
 
           <div className="flex items-center justify-center w-3/4">
-            <BookList visible={visible} currPage={currPage} contents={writingBooks} />
+            <BookList visibleBookCount={visible} currPage={currPage} contents={writingBooks} />
           </div>
 
           {(currPage + 1) * visible < writingBooks.length && (

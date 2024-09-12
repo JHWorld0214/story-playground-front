@@ -1,12 +1,12 @@
 import SideNavigationBar from '@/components/NavigationBar';
 import SearchBar from '@/components/SearchBar';
 import { useState } from 'react';
-import { doneBooks, writingBooks } from '@/components/dummyBookList';
+import { doneBooks, writingBooks } from '@/constant/dummyBookList';
 import BookList from '@/components/BookList';
 import { IconNext, IconPrev } from '@/public/icons';
 import SortingToggle from '@/components/SortingToggle';
 
-const DoneStory = () => {
+const DoneStory = function(){
   const [currPage, setCurrPage] = useState(0);
   const [selected, setSelected] = useState('recent');
 
@@ -51,7 +51,7 @@ const DoneStory = () => {
           )}
 
           <div className="flex items-center justify-center w-3/4">
-            <BookList visible={visible} currPage={currPage} contents={doneBooks} />
+            <BookList visibleBookCount={visible} currPage={currPage} contents={doneBooks} />
           </div>
 
           {(currPage + 1) * visible < doneBooks.length && (

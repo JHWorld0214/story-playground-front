@@ -6,22 +6,22 @@ import { useRouter } from 'next/router';
 import BookList from '@/components/BookList';
 import SearchBar from '@/components/SearchBar';
 import { useState } from 'react';
-import { doneBooks, writingBooks } from '@/components/dummyBookList';
+import { doneBooks, writingBooks } from '@/constant/dummyBookList';
 
 function Home() {
   const router = useRouter();
   const [ingCurrPage, setIngCurrPage] = useState(0);
   const [doneCurrPage, setDoneCurrPage] = useState(0);
 
-  const visible = 4;
+  const VISIBLE = 4;
 
   const handleNext = (category: string)=>{
     if(category === 'ing'){
-      if((ingCurrPage+1)*visible < writingBooks.length){
+      if((ingCurrPage+1)*VISIBLE < writingBooks.length){
         setIngCurrPage(ingCurrPage+1);
       }
     }else if(category === 'done'){
-      if((doneCurrPage + 1)*visible < doneBooks.length){
+      if((doneCurrPage + 1)*VISIBLE < doneBooks.length){
         setDoneCurrPage(doneCurrPage+1);
       }
     }
@@ -76,8 +76,8 @@ function Home() {
                 onClick={() => handlePrev('ing')}
               />
             )}
-            <BookList visible={visible} currPage={ingCurrPage} contents={writingBooks} />
-            {(ingCurrPage + 1) * visible < writingBooks.length && (
+            <BookList visibleBookCount={VISIBLE} currPage={ingCurrPage} contents={writingBooks} />
+            {(ingCurrPage + 1) * VISIBLE < writingBooks.length && (
               <IconNext
                 alt="next icon"
                 className="cursor-pointer"
@@ -98,8 +98,8 @@ function Home() {
                 onClick={() => handlePrev('done')}
               />
             )}
-            <BookList visible={visible} currPage={doneCurrPage} contents={doneBooks} />
-            {(doneCurrPage + 1) * visible < doneBooks.length && (
+            <BookList visibleBookCount={VISIBLE} currPage={doneCurrPage} contents={doneBooks} />
+            {(doneCurrPage + 1) * VISIBLE < doneBooks.length && (
               <IconNext
                 alt="next icon"
                 className="cursor-pointer"
