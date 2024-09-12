@@ -19,18 +19,18 @@ const SideNavigationBar = () => {
     name: 'JHOON KIM',
   });
 
-  useEffect(() => {
-    const getUserInfo = async () => {
-      const userInfoRes = await instance.get('/api/user/info');
-      console.log(userInfoRes.data.data);
-
-      if (userInfoRes.status === 200) {
-        // setUserInfo(userInfoRes.data.data);
-      }
-    };
-
-    getUserInfo();
-  }, []);
+  // useEffect(() => {
+  //   const getUserInfo = async () => {
+  //     const userInfoRes = await instance.get('/api/user/info');
+  //     console.log(userInfoRes.data.data);
+  //
+  //     if (userInfoRes.status === 200) {
+  //       // setUserInfo(userInfoRes.data.data);
+  //     }
+  //   };
+  //
+  //   getUserInfo();
+  // }, []);
 
   return (
     <div className="fixed left-0 top-0 shadow h-full w-[280px] bg-white z-10">
@@ -85,10 +85,24 @@ const NavStackContent = () => {
           >
             <IconBox stroke={currPage === '홈' ? '#7F57F1' : '#000000'} />
           </NavCell>
-          <NavCell name="만들던 이야기">
+          <NavCell
+            name="만들던 이야기"
+            onClick={() => {
+              setCurrPage('만들던 이야기');
+              router.push('/ingStory');
+            }}
+            selected={currPage === '만들던 이야기'}
+          >
             <IconBox stroke={'#000000'} />
           </NavCell>
-          <NavCell name="완성한 이야기">
+          <NavCell
+            name="완성한 이야기"
+            onClick={() => {
+              setCurrPage('완성한 이야기');
+              router.push('/doneStory');
+            }}
+            selected={currPage === '완성한 이야기'}
+          >
             <IconBox stroke={'#000000'} />
           </NavCell>
           <NavCell
